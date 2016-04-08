@@ -10,9 +10,57 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
 
 @import "bootstrap-sprockets"
 @import "bootstrap"
+@import font-awesome
+
+
+.navbar-default
+	background-color: rgb(255,255,255)
+
+.navbar .navbar-nav
+	display: inline-block
+	float: none
+	background-color: rgb(255,255,255)
+	color: black
+
+
+.navbar .navbar-collapse
+	text-align: center
+	background-color: rgb(255,255,255)
+	color: black
+
+
+.navbar-text
+	font-size: 12px
+
+
+.navbar-text > a
+	color: inherit
+	text-decoration: none
+
+
+.social 
+	padding-right: 15px
+
+
+.row.vertical-divider
+	overflow: hidden
+
+
+.row.vertical-divider > div[class^="col-"] 
+	margin-top: 20px
+	border-right: 1px solid #F2F7F9
+
+
+.row.vertical-divider div[class^="col-"]:first-child 
+	border-left: none
+
+
+.row.vertical-divider div[class^="col-"]:last-child 
+	border-right: none
