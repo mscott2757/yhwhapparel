@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def community_outreach
   end
+
+  def faq
+  end
 end
