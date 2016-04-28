@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/community_outreach', to: 'home#community_outreach'
   get '/faq', to: 'home#faq'
   get '/about_us', to: 'home#about_us'
+  get '/contact', to: 'home#contact'
+  get '/stories', to: 'home#stories'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

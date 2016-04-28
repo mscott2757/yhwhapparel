@@ -11,4 +11,10 @@ class HomeController < ApplicationController
   def about_us
   end
 
+  def contact
+  end
+
+  def stories
+  end
+
 end
