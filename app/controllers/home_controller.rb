@@ -7,4 +7,8 @@ class HomeController < ApplicationController
 
   def faq
   end
+
+  def about_us
+  end
+
 end

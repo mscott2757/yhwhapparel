@@ -12,8 +12,14 @@
 
 	<br/>
 
+	<% flash.each do |name, msg| %>
+    	<%= content_tag :div, msg, class: "alert alert-info" %>
+  	<% end %>
+
 	<div class="container-fluid text-center">
-		<img class="responsive" src="http://dpegb9ebondhq.cloudfront.net/banner_images/693291/Screen_Shot_2016-03-05_at_11.02.37_PM_original.png" alt="">
+		<%= link_to root_path do %>
+			<img class="responsive" src="http://dpegb9ebondhq.cloudfront.net/banner_images/693291/Screen_Shot_2016-03-05_at_11.02.37_PM_original.png" alt="">
+		<% end %>
 	</div>
 
 	<br/>
@@ -33,7 +39,7 @@
 			<ul class="nav navbar-nav ">
 				<li><%= link_to "Home", root_path %></li>
 				<li><%= link_to "Shop", "http://yhwhapparel.storenvy.com/products"%></li>
-				<li><%= link_to "About Us", "#"%></li>
+        <li><%= link_to "About Us", about_us_path %></li>
 				<li><%= link_to "Community Outreach", community_outreach_path %></li>
 				<li><%= link_to "Stories", "#"%></li>
 				<li><%= link_to "FAQ", faq_path %></li>
@@ -47,8 +53,8 @@
 
 	<br/>
 	<footer class="footer">
-		<hr>
 		<div class="container">
+			<hr>
 			<div class="row">
 				<div class="col-xs-8 ">
 					<p class="footer-text">Every design has been prayed upon, biblically inspired, and personally experienced. 100% of our profits will go towards charity and missionary trips.
@@ -63,8 +69,8 @@
 					</div>
 				</div>
 			</div>
+			<hr>
 		</div>
-		<hr>
 		<div class="container text-center">
 			<p>Berkeley, CA &copy; YHWH 2016</p>
 		</div>
