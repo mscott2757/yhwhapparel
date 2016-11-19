@@ -17,13 +17,6 @@
     	<%= content_tag :div, msg, class: "alert alert-info" %>
   	<% end %>
 
-	<div class="container-fluid text-center">
-		<%= link_to root_path do %>
-			<img class="responsive" src="http://dpegb9ebondhq.cloudfront.net/banner_images/693291/Screen_Shot_2016-03-05_at_11.02.37_PM_original.png" alt="">
-		<% end %>
-	</div>
-
-	<br/>
 
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
@@ -36,14 +29,16 @@
 			</button>
 		</div>
 
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav ">
-				<li><%= link_to "Home", root_path %></li>
-				<li><%= link_to "Shop", "http://yhwhapparel.storenvy.com/products"%></li>
-        		<li><%= link_to "About Us", about_us_path %></li>
-				<li><%= link_to "Community Outreach", community_outreach_path %></li>
-				<li><%= link_to "FAQ", faq_path %></li>
-				<li><%= link_to "Contact", contact_path %></li>
+		<div class="navbar navbar-fixed-top" >
+			<ul class="nav navbar-nav">
+        <li><%= link_to root_path do %>
+          <img class="responsive" src="http://dpegb9ebondhq.cloudfront.net/banner_images/693291/Screen_Shot_2016-03-05_at_11.02.37_PM_original.png" alt="" height="50">
+        <% end %></li>
+				<li class="navbar-item"><%= link_to "Shop", "http://yhwhapparel.storenvy.com/products"%></li>
+        <li class="navbar-item"><%= link_to "About Us", about_us_path %></li>
+				<li class="navbar-item"><%= link_to "Community Outreach", community_outreach_path %></li>
+				<li class="navbar-item"><%= link_to "FAQ", faq_path %></li>
+				<li class="navbar-item"><%= link_to "Contact", contact_path %></li>
 			</ul>
 		</div>
 
