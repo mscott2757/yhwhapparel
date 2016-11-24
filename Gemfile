@@ -3,6 +3,7 @@ ruby '2.2.4'
 gem 'thin'
 gem 'stripe'
 gem 'figaro'
+gem 'acts_as_shopping_cart', :github => 'crowdint/acts_as_shopping_cart', :branch => '0-1-x'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
