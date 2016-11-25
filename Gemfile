@@ -4,6 +4,8 @@ gem 'thin'
 gem 'stripe'
 gem 'figaro'
 gem 'acts_as_shopping_cart', :github => 'crowdint/acts_as_shopping_cart', :branch => '0-1-x'
+gem 'instagram'
+gem 'instafeed'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
