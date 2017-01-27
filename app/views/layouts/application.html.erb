@@ -17,6 +17,15 @@
     	<%= content_tag :div, msg, class: "alert alert-info" %>
   	<% end %>
 
+  <% if current_order %>
+    <p style="border:1px solid black;padding:10px;">
+      You have <%= pluralize current_order.total_items, 'item'%> in your basket which cost
+      <%= number_to_currency current_order.total_before_tax %>.
+    </p>
+  <% end %>
+  <%= link_to "View basket", basket_path %>
+  <%= link_to "Checkout", checkout_path %>
+  <%= flash[:notice] %>
 
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
@@ -34,7 +43,7 @@
         <li><%= link_to root_path do %>
           <img class="responsive" src="http://dpegb9ebondhq.cloudfront.net/banner_images/693291/Screen_Shot_2016-03-05_at_11.02.37_PM_original.png" alt="" height="50">
         <% end %></li>
-				<li class="navbar-item"><%= link_to "Shop", "http://yhwhapparel.storenvy.com/products"%></li>
+				<li class="navbar-item"><%= link_to "Shop", products_path %></li>
         <li class="navbar-item"><%= link_to "About Us", about_us_path %></li>
 				<li class="navbar-item"><%= link_to "Community Outreach", community_outreach_path %></li>
 				<li class="navbar-item"><%= link_to "FAQ", faq_path %></li>

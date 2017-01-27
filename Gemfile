@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 ruby '2.2.4'
 gem 'thin'
-gem 'stripe'
+gem 'shoppe-stripe', require: 'shoppe/stripe'
 gem 'figaro'
-gem 'acts_as_shopping_cart', :github => 'crowdint/acts_as_shopping_cart', :branch => '0-1-x'
 gem 'instagram'
 gem 'instafeed'
+gem 'shoppe', '~> 1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'

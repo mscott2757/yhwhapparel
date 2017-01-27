@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require instafeed
+//= require shoppe/stripe/form_handler
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
