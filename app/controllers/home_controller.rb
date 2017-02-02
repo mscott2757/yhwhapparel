@@ -17,4 +17,7 @@ class HomeController < ApplicationController
   def stories
   end
 
+  def apparel
+  end
+
 end

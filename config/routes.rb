@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/about_us', to: 'home#about_us'
   get '/contact', to: 'home#contact'
   get '/stories', to: 'home#stories'
+  get '/apparel', to: 'home#apparel'
 
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
