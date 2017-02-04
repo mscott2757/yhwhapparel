@@ -1,15 +1,23 @@
 <div class="container">
   <h2>Products</h2>
+  <hr>
 
   <% @products.each do |category, products| %>
     <h3><%= category.name %></h3>
+    <br>
     <ul>
-      <% products.each do |product| %>
-      <li>
-        <h4><%= link_to product.name, product_path(product.permalink) %></h4>
-        <p><%= product.short_description %></p>
-        <p><b>Price:</b> <%= number_to_currency product.price %></p>
-      </li>
+      <% products.each_slice(3) do |product_row| %>
+      <div class="row">
+        <% product_row.each do |product| %>
+          <div class="col-md-4">
+            <% if product.default_image %>
+                <%= image_tag product.default_image.path, :width => '200px', :style => "" %>
+            <% end %>
+            <p><%= link_to product.name, product_path(product.permalink) %></p>
+            <p><%= number_to_currency product.price %></p>
+          </div>
+        <% end %>
+      </div>
       <% end %>
     </ul>
   <% end %>
