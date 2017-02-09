@@ -11,7 +11,9 @@
         <div class="col-md-4 product-panel">
           <div class="product-thumb">
             <% if product.default_image %>
-                <%= image_tag product.default_image.path, :width => '200px' %>
+                <%= link_to product_path(product.permalink) do %>
+                  <%= image_tag product.default_image.path, :width => '200px' %>
+                <% end %>
             <% end %>
           </div>
           <%= link_to product.name, product_path(product.permalink), :class => "product-link" %>

@@ -21,6 +21,23 @@
   color: black;
 }
 
+.product-link:hover {
+  color: #888;
+}
+
 .product-panel p {
   color: #888;
+}
+
+.add-btn {
+  color: white;
+  background-color: #333333;
+  border-radius: 0 !important;
+  padding: 8px 16px !important;
+}
+
+.add-btn:hover, .add-btn:active, .add-btn:focus {
+  border-color: #333333;
+  color: #333333;
+  background-color: white;
 }
