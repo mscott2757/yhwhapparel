@@ -5,20 +5,20 @@
   <% @products.each do |category, products| %>
     <h3><%= category.name %></h3>
     <br>
-    <ul>
-      <% products.each_slice(3) do |product_row| %>
-      <div class="row">
-        <% product_row.each do |product| %>
-          <div class="col-md-4">
+    <% products.each_slice(3) do |product_row| %>
+    <div class="row">
+      <% product_row.each do |product| %>
+        <div class="col-md-4 product-panel">
+          <div class="product-thumb">
             <% if product.default_image %>
-                <%= image_tag product.default_image.path, :width => '200px', :style => "" %>
+                <%= image_tag product.default_image.path, :width => '200px' %>
             <% end %>
-            <p><%= link_to product.name, product_path(product.permalink) %></p>
-            <p><%= number_to_currency product.price %></p>
           </div>
-        <% end %>
-      </div>
+          <%= link_to product.name, product_path(product.permalink), :class => "product-link" %>
+          <p><%= number_to_currency product.price %></p>
+        </div>
       <% end %>
-    </ul>
+    </div>
+    <% end %>
   <% end %>
 </div>

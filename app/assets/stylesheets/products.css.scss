@@ -1,3 +1,26 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.product-panel {
+  margin-bottom: 1.5vh;
+}
+
+.product-thumb {
+  display: block;
+  height: 39vh;
+  // background-color: #888;
+}
+
+.product-thumb img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-link {
+  color: black;
+}
+
+.product-panel p {
+  color: #888;
+}
