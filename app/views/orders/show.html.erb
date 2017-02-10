@@ -1,6 +1,4 @@
 <div class="container">
-  <h3>Your basket</h3>
-
   <%= render 'items', :order => current_order %>
 
   <p><%= link_to 'Empty basket', basket_path, :method => :delete %></p>
