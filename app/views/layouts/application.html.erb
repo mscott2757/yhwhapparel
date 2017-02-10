@@ -49,6 +49,11 @@
 				<li class="navbar-item"><%= link_to "Community Outreach", community_outreach_path %></li>
 				<li class="navbar-item"><%= link_to "FAQ", faq_path %></li>
 				<li class="navbar-item"><%= link_to "Contact", contact_path %></li>
+        <li class="navbar-item">
+          <%= link_to basket_path do %>
+            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+          <% end %>
+        </li>
 			</ul>
 		</div>
 

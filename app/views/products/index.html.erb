@@ -1,9 +1,9 @@
 <div class="container">
-  <h2>Products</h2>
+  <h3>Products</h3>
   <hr>
 
   <% @products.each do |category, products| %>
-    <h3><%= category.name %></h3>
+    <h4><%= category.name %></h4>
     <br>
     <% products.each_slice(3) do |product_row| %>
     <div class="row">
