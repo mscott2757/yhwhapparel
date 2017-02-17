@@ -6,6 +6,7 @@ gem 'figaro'
 gem 'instagram'
 gem 'instafeed'
 gem 'shoppe', '~> 1.0'
+gem 'rspec-core'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -16,6 +17,7 @@ group :production do
 end
 group :development, :test do
   gem 'sqlite3'
+  gem 'rb-readline'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
