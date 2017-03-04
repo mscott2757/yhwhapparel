@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127222514) do
+ActiveRecord::Schema.define(version: 20170304000438) do
 
   create_table "nifty_key_value_store", force: true do |t|
     t.integer "parent_id"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20170127222514) do
     t.string   "phonenumber"
     t.integer  "product_id"
     t.boolean  "berkeley"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prayers", force: true do |t|
+    t.string   "name"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
