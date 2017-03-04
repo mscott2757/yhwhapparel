@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'home#contact'
   get '/stories', to: 'home#stories'
   get '/designs', to: 'home#designs'
-  get '/prayers', to: 'prayers#new'
+  get "project/new_release" => 'prayers#new_release', :as => :new_release
   resources :prayers
 
   get "product/:permalink", to: "products#show", as: "product"

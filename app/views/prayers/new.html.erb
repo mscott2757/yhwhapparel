@@ -1,4 +1,16 @@
-<div class="container">
-  <h1>Prayers#new</h1>
-  <p>Find me in app/views/prayers/new.html.erb</p>
+<h1> Prayers </h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@prayer) do |f| %>
+      <%= render 'prayers/error_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :prayer %>
+      <%= f.text_field :prayer, class: 'form-control' %>
+
+      <%= f.submit "Post Prayer", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
