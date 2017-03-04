@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/stories', to: 'home#stories'
   get '/designs', to: 'home#designs'
   get '/prayers', to: 'prayers#new'
+  resources :prayers
 
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
