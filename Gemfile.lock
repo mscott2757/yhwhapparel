@@ -251,6 +251,7 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.1)
+    rb-readline (0.5.4)
     rdoc (4.2.2)
       json (~> 1.4)
     rest-client (1.8.0)
@@ -261,6 +262,9 @@ GEM
       nokogiri
       rubyzip
       spreadsheet (> 0.6.4)
+    rspec-core (3.5.4)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
     ruby-ole (1.2.12)
     rubyzip (1.2.0)
     sass (3.2.19)
@@ -347,6 +351,8 @@ DEPENDENCIES
   pg
   rails (= 4.1.4)
   rails_12factor
+  rb-readline
+  rspec-core
   sass
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
@@ -362,4 +368,4 @@ RUBY VERSION
    ruby 2.2.4p230
 
 BUNDLED WITH
-   1.12.5
+   1.14.3
