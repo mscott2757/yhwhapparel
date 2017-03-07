@@ -39,6 +39,7 @@
       <div class="prayer">
         <p><%= prayer.prayer %></p>
         <p><%= prayer.name %> - <%= prayer.created_at.strftime("%b %d, %Y") %></p>
+        <p> Amens: <%= prayer.affirms %></p>
       </div>
     <% end %>
   </div>
