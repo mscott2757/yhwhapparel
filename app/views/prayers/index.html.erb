@@ -1,4 +1,4 @@
-<div class="col-md-2" style="position: fixed;">
+<div class="col-md-3 col-md-offset-1" style="position: fixed; width: 30vw;">
   <%= form_for(@prayer) do |f| %>
     <%= render 'prayers/error_messages' %>
 
@@ -6,7 +6,7 @@
     <%= f.text_field :name, class: 'form-control' %>
 
     <%= f.label :prayer %>
-    <%= f.text_area :prayer, class:  'form-control', size: "30x12" %>
+    <%= f.text_area :prayer, class:  'form-control', size: "x22" %>
     <%= f.submit "Post Prayer", class: "btn btn-primary" %>
   <% end %>
 </div>
@@ -14,40 +14,35 @@
   .container.prayers {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
     overflow-y: scroll;
+    padding-left: 0;
+    margin-left: 0;
+    width: 80vw;
   }
   .prayer {
     word-wrap: break-word;
     display: inline-block;
-    background-color: grey;
+    outline: black solid thin;
     margin:10px 0 0 2%;
     flex-grow: 1;
-    /*width: calc(100% * (1/4) - 10px - 1px);*/
     max-width: 900px;
     overflow:visible;
   }
-  /* Small screens */
-  @media all and (max-width: 500px) {
-    .prayer {
-      /* On small screens, we are no longer using row direction but column */
-      flex-direction: column;
-    }
-  }
 </style>
-<div class="container">
+<div class="col-md-9" style="padding-left: 0; margin-left: 40%">
   <h3> Verse </h3>
+  <div class="container prayers" >
+    <% @prayers.each do |prayer| %>
+      <div class="prayer">
+        <p><%= prayer.prayer %></p>
+        <p><%= prayer.name %> - <%= prayer.created_at.strftime("%b %d, %Y") %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
-<div class="container prayers" >
-  <% @prayers.each do |prayer| %>
-    <div class="prayer">
-      <p><%= prayer.prayer %></p>
-      <p><%= prayer.name %> - <%= prayer.created_at.strftime("%b %d, %Y") %></p>
-    </div>
-  <% end %>
-</div>
+
 
 
