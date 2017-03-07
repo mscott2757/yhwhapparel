@@ -1,28 +1,53 @@
-<div class="container">
-    <div class="col-md-3">
-      <%= form_for(@prayer) do |f| %>
-        <%= render 'prayers/error_messages' %>
+<div class="col-md-2" style="position: fixed;">
+  <%= form_for(@prayer) do |f| %>
+    <%= render 'prayers/error_messages' %>
 
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
+    <%= f.label :name, "Name (optional)" %>
+    <%= f.text_field :name, class: 'form-control' %>
 
-        <%= f.label :prayer %>
-        <%= f.text_field :prayer, class: 'form-control' %>
-
-        <%= f.submit "Post Prayer", class: "btn btn-primary" %>
-      <% end %>
-    <div>
-    <div class="col-md-9">
-      <h3> Verse </h3>
-      <ul class="prayers" style="list-style: none;">
-        <% @prayers.each do |prayer| %>
-          <li>
-            <%= prayer.name %>,
-            <%= prayer.prayer %>,
-            <%= prayer.created_at.strftime("%b %d, %Y") %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    <%= f.label :prayer %>
+    <%= f.text_area :prayer, class:  'form-control', size: "30x12" %>
+    <%= f.submit "Post Prayer", class: "btn btn-primary" %>
+  <% end %>
 </div>
+<style>
+  .container.prayers {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+    overflow-y: scroll;
+  }
+  .prayer {
+    word-wrap: break-word;
+    display: inline-block;
+    background-color: grey;
+    margin:10px 0 0 2%;
+    flex-grow: 1;
+    /*width: calc(100% * (1/4) - 10px - 1px);*/
+    max-width: 900px;
+    overflow:visible;
+  }
+  /* Small screens */
+  @media all and (max-width: 500px) {
+    .prayer {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+  }
+</style>
+<div class="container">
+  <h3> Verse </h3>
+</div>
+<div class="container prayers" >
+  <% @prayers.each do |prayer| %>
+    <div class="prayer">
+      <p><%= prayer.prayer %></p>
+      <p><%= prayer.name %> - <%= prayer.created_at.strftime("%b %d, %Y") %></p>
+    </div>
+  <% end %>
+</div>
+
 
