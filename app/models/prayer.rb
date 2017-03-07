@@ -5,4 +5,8 @@ class Prayer < ActiveRecord::Base
   def set_defaults
     self.affirms ||= 0
   end
+
+  def affirm
+    self.affirms += 1
+  end
 end

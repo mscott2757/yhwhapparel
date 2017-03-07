@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'home#contact'
   get '/stories', to: 'home#stories'
   get '/designs', to: 'home#designs'
+  patch '/prayers/:id' => 'prayers#update', :as => 'affirm_prayer'
   resources :prayers
 
   get "product/:permalink", to: "products#show", as: "product"

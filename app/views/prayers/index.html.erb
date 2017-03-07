@@ -1,6 +1,6 @@
 <div class="col-md-3 col-md-offset-1" style="position: fixed; width: 30vw;">
   <%= form_for(@prayer) do |f| %>
-    <%= render 'prayers/error_messages' %>
+    <%= render 'prayers/error_messages', object: f.object %>
 
     <%= f.label :name, "Name (optional)" %>
     <%= f.text_field :name, class: 'form-control' %>
@@ -37,9 +37,12 @@
   <div class="container prayers" >
     <% @prayers.each do |prayer| %>
       <div class="prayer">
+        <strong><%= prayer.name %></strong>
         <p><%= prayer.prayer %></p>
-        <p><%= prayer.name %> - <%= prayer.created_at.strftime("%b %d, %Y") %></p>
-        <p> Amens: <%= prayer.affirms %></p>
+        <span style="color: grey">Posted:
+          <%= prayer.created_at.strftime("%b %d, %Y") %> </span>
+        <p style="color: grey">Affirms: <%= prayer.affirms %> </p>
+        <%= link_to "Affirm!", prayer_path(prayer), method: :patch %>
       </div>
     <% end %>
   </div>
