@@ -1,21 +1,11 @@
 class PrayersController < ApplicationController
   def index
     @prayers = Prayer.order(:created_at).reverse
+    @prayer = Prayer.new
   end
 
   def show
     @prayer = Prayer.find(params[:id])
-  end
-
-  def new_release
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
-
-  def new
-    @prayer = Prayer.new
   end
 
   def create
