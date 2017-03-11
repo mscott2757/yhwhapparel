@@ -1,50 +1,35 @@
-<div class="col-md-3 col-md-offset-1" style="position: fixed; width: 30vw;">
-  <%= form_for(@prayer) do |f| %>
-    <%= render 'prayers/error_messages', object: f.object %>
-
-    <%= f.label :name, "Name (optional)" %>
-    <%= f.text_field :name, class: 'form-control' %>
-
-    <%= f.label :prayer %>
-    <%= f.text_area :prayer, class:  'form-control', size: "x22" %>
-    <%= f.submit "Post Prayer", class: "btn btn-primary" %>
-  <% end %>
-</div>
-<style>
-  .container.prayers {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
-    overflow-y: scroll;
-    padding-left: 0;
-    margin-left: 0;
-    width: 80vw;
-  }
-  .prayer {
-    word-wrap: break-word;
-    display: inline-block;
-    outline: black solid thin;
-    margin:10px 0 0 2%;
-    flex-grow: 1;
-    max-width: 900px;
-    overflow:visible;
-  }
-</style>
-<div class="col-md-9" style="padding-left: 0; margin-left: 40%">
-  <h3> Verse </h3>
-  <div class="container prayers" >
-    <% @prayers.each do |prayer| %>
-      <div class="prayer">
-        <strong><%= prayer.name %></strong>
-        <p><%= prayer.prayer %></p>
-        <span style="color: grey">Posted:
-          <%= prayer.created_at.strftime("%b %d, %Y") %> </span>
-        <p style="color: grey">Affirms: <%= prayer.affirms %> </p>
-        <%= link_to "Affirm!", prayer_path(prayer), method: :patch %>
-      </div>
+<div id="prayer-wall" class="container-fluid">
+  <div id="prayer-intro">
+    <h1> Prayer Wall </h1>
+    <h4> Welcome to YHWH's prayer wall! <br/>
+      If you want someone to pray for you, please <br/>
+      enter your prayer in the box below. <br/>
+      If you want to pray for someone, make sure you <br/>
+      let them know by clicking the heart button! </h4>
+    <%= form_for @prayer, :html => { :id => "prayer-form" } do |f| %>
+      <%= render 'prayers/error_messages', object: f.object %>
+      <%= f.label :prayer %>
+      <%= f.text_area :prayer, class:  'form-control', size: "x20",
+            placeholder: "Enter your prayer request here."%>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
     <% end %>
+  </div>
+  <div id="prayer-list">
+    <h3> Do not be anxious in anything, but in everything by prayer <br/>
+      and supplication with thanksgiving let your requests be made <br/>
+      known to God. <br/><br/> Phillpians 4:6 </h3>
+    <div class="container prayers" >
+      <% @prayers.each do |prayer| %>
+        <div class="prayer">
+          <p><%= prayer.prayer %></p>
+          <span style="color: grey">Posted:
+            <%= prayer.created_at.strftime("%b %d, %Y") %> </span>
+          <p style="color: grey">This prayer has been prayed for
+            <%= prayer.affirms %> times </p>
+          <%= link_to "I prayed for you!", prayer_path(prayer), method: :patch %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
