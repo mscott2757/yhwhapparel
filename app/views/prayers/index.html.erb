@@ -1,6 +1,6 @@
 <div id="prayer-wall" class="container-fluid">
   <div id="prayer-intro">
-    <h1> Prayer Wall </h1>
+    <img class="center-block" src="/assets/prayer_wall.png" style="width:400px; height:250px;">
     <h4> Welcome to YHWH's prayer wall! <br/>
       If you want someone to pray for you, please <br/>
       enter your prayer in the box below. <br/>
@@ -21,12 +21,13 @@
     <div class="container prayers" >
       <% @prayers.each do |prayer| %>
         <div class="prayer">
+          <p style="color: grey"> Requested on <%= prayer.created_at.strftime("%b %d, %Y") %> </p>
           <p><%= prayer.prayer %></p>
-          <span style="color: grey">Posted:
-            <%= prayer.created_at.strftime("%b %d, %Y") %> </span>
-          <p style="color: grey">This prayer has been prayed for
-            <%= prayer.affirms %> times </p>
-          <%= link_to "I prayed for you!", prayer_path(prayer), method: :patch %>
+          <p style="color: grey">
+            This prayer has been prayed for
+            <%= pluralize(prayer.affirms, "time") %> </p>
+          <%= button_to "    I prayed for you!", prayer_path(prayer), :id => "prayer-btn", method: :patch %>
+
         </div>
       <% end %>
     </div>

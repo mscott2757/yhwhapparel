@@ -11,28 +11,36 @@
     left: 19%;
     right: 30%;
     position: relative;
-    width: 37vw;
+    width: 44vw;
     .container.prayers {
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
       align-content: flex-start;
-      overflow-y: scroll;
       padding-left: 0;
       margin-left: 0;
-      width: 80vw;
+      width: 44vw;
     }
     .prayer {
       border-left: 4px solid #202020;
       word-wrap: break-word;
-      display: inline-block;
       padding-left: 10px;
       margin:10px 0 10px 0;
-      flex-grow: 1;
-      max-width: 900px;
-      overflow:visible;
+      width: 44vw;
+      display: block;
       position: relative;
+      #prayer-btn {
+        background-color: inherit;
+        border-radius: 8px;
+        border: 1px solid #989898;
+        color: #989898;
+        background-image: url("/assets/heart.jpg");
+        background-position: left;
+        padding-top: 50px;
+        padding-left: 50px;
+      }
     }
   }
 
