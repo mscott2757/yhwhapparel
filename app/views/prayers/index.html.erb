@@ -1,6 +1,6 @@
 <div id="prayer-wall" class="container-fluid">
   <div id="prayer-intro">
-    <img class="center-block" src="/assets/prayer_wall.png" style="width:400px; height:250px;">
+    <img class="center-block" src="/assets/prayer_wall.png" style="width:17vw; height:12vw;">
     <h4> Welcome to YHWH's prayer wall! <br/>
       If you want someone to pray for you, please <br/>
       enter your prayer in the box below. <br/>
@@ -12,6 +12,7 @@
       <%= f.text_area :prayer, class:  'form-control', size: "x20",
             placeholder: "Enter your prayer request here."%>
       <%= f.submit "Submit", class: "btn btn-primary" %>
+      <%= button_tag "Clear", class: "btn btn-secondary", type: :reset %>
     <% end %>
   </div>
   <div id="prayer-list">
@@ -23,11 +24,11 @@
         <div class="prayer">
           <p style="color: grey"> Requested on <%= prayer.created_at.strftime("%b %d, %Y") %> </p>
           <p><%= prayer.prayer %></p>
-          <p style="color: grey">
+          <span style="color: grey">
             This prayer has been prayed for
-            <%= pluralize(prayer.affirms, "time") %> </p>
-          <%= button_to "    I prayed for you!", prayer_path(prayer), :id => "prayer-btn", method: :patch %>
-
+            <%= pluralize(prayer.affirms, "time") %>
+          <%= link_to "I prayed for you!", prayer_path(prayer), :id => "prayer-btn", :class =>"pull-right", method: :patch %>
+        </span>
         </div>
       <% end %>
     </div>
