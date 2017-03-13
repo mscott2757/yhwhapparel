@@ -1,0 +1,40 @@
+<div id="prayer-wall" class="container-fluid">
+  <div id="prayer-intro">
+    <img class="center-block" src="/assets/prayer_wall.png" style="width:100%; height:110%;">
+    <h4> Welcome to YHWH's prayer wall! <br/>
+      If you want someone to pray for you, please <br/>
+      enter your prayer in the box below. <br/>
+      If you want to pray for someone, make sure you <br/>
+      let them know by clicking the heart button! </h4>
+    <%= form_for @prayer, :html => { :id => "prayer-form" } do |f| %>
+      <%= render 'prayers/error_messages', object: f.object %>
+      <%= f.text_area :prayer, class:  'form-control', size: "x20",
+            placeholder: "Enter your prayer request here."%>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <%= button_tag "Clear", class: "btn btn-secondary", type: :reset %>
+    <% end %>
+  </div>
+  <div id="prayer-list">
+    <h3> Do not be anxious in anything, but in everything by prayer <br/>
+      and supplication with thanksgiving let your requests be made <br/>
+      known to God. <br/><br/> Phillpians 4:6 </h3>
+    <div id="prayer-list-flexbox" class="container prayers" >
+      <% @prayers.each do |prayer| %>
+        <div id="prayer_<%= prayer.id -%>" class="prayer">
+          <p style="color: grey"> Requested on <%= prayer.created_at.strftime("%b %d, %Y") %> </p>
+          <p><%= prayer.prayer %></p>
+          <span style="color: grey">
+            This prayer has been prayed for
+            <%= pluralize(prayer.affirms, "time") %> </span>
+          <button type="button"
+                  id="prayer-btn"
+                  class="pull-right"
+                  data-id="<%= prayer.id %>"> I prayed for you! </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

@@ -105,14 +105,30 @@ hr
   overflow: hidden
 
 
-.row.vertical-divider > div[class^="col-"] 
+.row.vertical-divider > div[class^="col-"]
   margin-top: 20px
   border-right: 1px solid #F2F7F9
 
 
-.row.vertical-divider div[class^="col-"]:first-child 
+.row.vertical-divider div[class^="col-"]:first-child
   border-left: none
 
 
-.row.vertical-divider div[class^="col-"]:last-child 
+.row.vertical-divider div[class^="col-"]:last-child
   border-right: none
+
+#error_explanation
+  color: red
+  ul
+    color: red
+    margin: 0 0 30px 0
+
+
+.field_with_errors 
+  @extend .has-error
+  .form-control
+    color: $state-danger-text
+
+
+
+
