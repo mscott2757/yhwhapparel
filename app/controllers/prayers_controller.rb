@@ -12,6 +12,7 @@ class PrayersController < ApplicationController
     @prayer = Prayer.new(prayer_params)
     @prayers = Prayer.order(:created_at).reverse
     if @prayer.save
+      flash[:notice] = "yay!"
       redirect_to prayers_path
     else
       render 'index'
@@ -22,7 +23,7 @@ class PrayersController < ApplicationController
     @prayer = Prayer.find(params[:id])
     @prayer.affirms ||= 0
     @prayer.update(affirms: @prayer.affirms + 1)
-    redirect_to prayers_path
+    render json: @prayer
   end
 
   private
