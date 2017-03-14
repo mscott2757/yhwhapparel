@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'prayers/new'
+
   mount Shoppe::Engine => "/shoppe"
   get 'home/index'
 
@@ -13,6 +15,8 @@ Rails.application.routes.draw do
   get '/contact', to: 'home#contact'
   get '/stories', to: 'home#stories'
   get '/designs', to: 'home#designs'
+  patch '/prayers/update' => 'prayers#update'
+  resources :prayers
 
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"

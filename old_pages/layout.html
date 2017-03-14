@@ -46,22 +46,22 @@
       <div id="container">
         <div id="mobile-header">
           <a id="drawer_button" href="javascript:;">Open Nav</a>
-        </div> 
+        </div>
         <div id="header">
           <div id="store_info">
             {% if theme.show_store_name %}
             <h1 class="store_name"><a href="/" >{{store.name}}</a></h1>
            <p id="tagline">
              <!---------------------------- Tagline ---------------------------->
-            
 
 
-            
+
+
             Storenvy theme
 
 
-            
-            
+
+
              <!---------------------------- Tagline ---------------------------->
 
             </p>
@@ -75,16 +75,16 @@
         </div><!-- end #header -->
           <div id="header_bottom">
             <ul id="nav">
-                   <li><a href="/">Home</a></li> 
+                   <li><a href="/">Home</a></li>
                   <li>
                     <a href="/products"><b>Shop</b></a>
-                  </li>         
+                  </li>
 
                 {% for page in pages.custom %}
                 <li><a href="{{ page.url }}" class="{{ page.permalink }}">{{ page.name }}</a></li>
-                {% endfor %} 
+                {% endfor %}
                  <li><a href="{{ pages.faq.url }}">FAQ</a><br/></li>
-                <li><a href="{{ pages.contact.url }}">Contact</a></li>     
+                <li><a href="{{ pages.contact.url }}">Contact</a></li>
                 </ul>
        </div>
         <div id="content" {% if store.banner_image == blank and theme.show_store_name == false %} class="pad-top" {% endif %}>
@@ -111,8 +111,8 @@
                       <a href="{{nav_item.url}}">{{ nav_item.name }}</a>
                     </li>
                   {% endfor %}
-                </ul>             
-  
+                </ul>
+
                 <hr/>
                 <ul id="buttons">
                   {% for page in pages.all %}
@@ -140,13 +140,13 @@
                </ul>
                 {% endif %}
                 <div class="mobile-sidebar-content">
-                  <hr/>               
+                  <hr/>
                 </div>
               </div><!-- end .sidebar-wrapper -->
 
             </div><!-- end #sidebar -->
 
-            <div id="main">
+            <!-- <div id="main">
               {% if notice != blank %}
               <div id="success" class="flash-message">
                 <p>{{ notice }}</p>
@@ -162,8 +162,8 @@
               {{ page_content }}
             </div><!-- end #main-->
           </div>
-        </div><!-- end #content -->
-       
+        </div><!-- end #content --> -->
+
   <div id="footer">
 <div id="boxes">
  <div>
@@ -198,9 +198,9 @@ All for His glory.
 {% if place.name  contains 'Tumblr' %} <a href="{{place.url}}"><i class="fa fa-tumblr fa-lg"></i></a>{% endif %}
 {% if place.name  contains 'Wordpress' %} <a href="{{place.url}}"><i class="fa fa-wordpress fa-lg"></i></a>{% endif %}
 {% if place.name  contains 'Google' %} <a href="{{place.url}}"><i class="fa fa-google-plus"></i></a>{% endif %}
-        
-{% endfor %}   
-   
+
+{% endfor %}
+
 
 </p>
 
@@ -211,17 +211,17 @@ All for His glory.
                 {% endif %}
 
                 <span class="footer-small">©  {{ store.name }} 2016</span>
-              
-      
+
+
 </p>
- 
+
 </div>
 
-</div><!-- end footer --> 
+</div><!-- end footer -->
  </div><!-- end #container -->
     </div><!-- end #wrapper -->
-    <div class="clearfix"></div> 
-    
+    <div class="clearfix"></div>
+
   </body>
 </html>
 ​

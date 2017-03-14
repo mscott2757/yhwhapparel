@@ -1,0 +1,93 @@
+// Place all the styles related to the Prayers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#prayer-wall {
+  position: relative;
+  #prayer-list {
+    h3 {
+      text-align: center;
+    }
+    float: left;
+    left: 41%;
+    right: 30%;
+    position: relative;
+    width: 45.5%;
+    .container.prayers {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      align-content: flex-start;
+      padding-left: 0;
+      margin-left: 0;
+      width: 101%;
+    }
+    .prayer {
+      border-left: 4px solid #202020;
+      word-wrap: break-word;
+      padding-left: 10px;
+      margin:10px 0 10px 0;
+      width: 104%;
+      display: block;
+      position: relative;
+      #prayer-btn {
+        text-align: right;
+        overflow: hidden;
+        background-color: inherit;
+        border-radius: 8px;
+        border: 1px solid #989898;
+        color: #989898;
+        background-image: image-url("/heart.png");
+        background-size: 23%;
+        background-position: left;
+        background-repeat: no-repeat;
+        padding-top: .6%;
+        padding-bottom: .6%;
+        padding-left: 5%;
+        padding-right: 1.5%;
+        width: auto;
+        height: auto;
+        display: inline-block;
+      }
+    }
+  }
+
+  #prayer-intro {
+    position: fixed;
+    left: 13%;
+    float: left;
+    width: 25%;
+    transform: translate(0%, -5%);
+    h1 {
+      text-align: center;
+    }
+    h4 {
+      text-align: center;
+    }
+
+    #prayer-form {
+      #prayer_name, #prayer_prayer{
+        box-shadow: none;
+        box-sizing: border-box;
+        border: 2px solid #505050;
+        border-radius: 4px;
+      }
+      .btn {
+        background-color: white;
+        color: black;
+        margin-top: 3px;
+        box-sizing: border-box;
+        border: 2px solid #505050;
+        border-radius: 4px;
+        width: 49%;
+        display: inline-block;
+      }
+      .btn:hover {
+        background-color: grey;
+        color: white;
+      }
+    }
+  }
+
+}
