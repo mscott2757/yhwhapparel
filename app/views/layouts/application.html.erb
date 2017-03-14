@@ -10,35 +10,11 @@
 <body>
 
 <div class="container-fluid">
-
-	<br/>
-
 	<% flash.each do |name, msg| %>
     	<%= content_tag :div, msg, class: "alert alert-info" %>
   	<% end %>
 
-  <% if current_order %>
-    <p style="border:1px solid black;padding:10px;">
-      You have <%= pluralize current_order.total_items, 'item'%> in your basket which cost
-      <%= number_to_currency current_order.total_before_tax %>.
-    </p>
-  <% end %>
-  <%= link_to "View basket", basket_path %>
-  <%= link_to "Checkout", checkout_path %>
-  <%= flash[:notice] %>
-
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle Navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-		</div>
-
-		<div class="navbar navbar-fixed-top" >
+		<div class="navbar navbar-default navbar-fixed-top">
 			<ul class="nav navbar-nav">
         <li><%= link_to root_path do %>
           <img class="responsive" src="http://dpegb9ebondhq.cloudfront.net/banner_images/693291/Screen_Shot_2016-03-05_at_11.02.37_PM_original.png" alt="" height="50">
@@ -57,8 +33,6 @@
         </li>
 			</ul>
 		</div>
-
-	</nav>
 
 	<%= yield %>
 

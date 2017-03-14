@@ -10,13 +10,20 @@ class OrdersController < ApplicationController
     if request.patch?
       if @order.proceed_to_confirm(params[:order].permit(:first_name, :last_name, :billing_address1, :billing_address2, :billing_address3, :billing_address4, :billing_country_id, :billing_postcode, :email_address, :phone_number))
         redirect_to checkout_payment_path
+      else
+        flash.now[:error] = "Order could not be processed, please review information"
       end
     end
   end
 
   def payment
+    @order = Shoppe::Order.find(current_order.id)
     if request.post?
-      redirect_to checkout_confirmation_path
+      if @order.accept_stripe_token(params[:stripe_token])
+        redirect_to checkout_confirmation_path
+      else
+        flash.now[:notice] = "Could not exchange Stripe token. Please try again."
+      end
     end
   end
 
