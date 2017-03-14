@@ -1,43 +1,9 @@
 <div class="row">
   <div class="col-md-9 basket-body">
-    <h4>Shopping Bag</h4>
-    <hr>
-    <div class="row">
-      <div class="col-md-5">
-        <p>Proudct<p>
-      </div>
-      <div class="col-md-3">
-        <p>Quantity<p>
-      </div>
-      <div class="col-md-4">
-        <p>Price</p>
-      </div>
-    </div>
-    <% order.order_items.each do |item| %>
-      <div class="row">
-        <div class="col-md-5">
-        <p><%= item.ordered_item.full_name %><p>
-        </div>
-        <div class="col-md-3">
-          <p><%= item.quantity %><p>
-        </div>
-        <div class="col-md-4">
-          <p><%= number_to_currency item.sub_total %></p>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'items_list', :order => current_order %>
   </div>
   <div class="col-md-3 order-summary-body">
-    <h4>Order Summary</h4>
-    <hr>
-    <div class="checkout-totals">
-      <p class="checkout-total-label">Sub-Total<span class="checkout-total-value"><%= number_to_currency order.total_before_tax %></span></p>
-      <% if order.delivery_service %>
-        <p class="checkout-total-label">Shipping<span class="checkout-total-value"><%= number_to_currency order.delivery_price + order.delivery_tax_amount %></span></p>
-      <% end %>
-      <p class="checkout-total-label">Tax<span class="checkout-total-value"><%= number_to_currency order.tax %></span></p>
-      <p class="checkout-total-label">Total<span class="checkout-total-value"><%= number_to_currency order.total + order.delivery_price + order.delivery_tax_amount %></span></p>
-    </div>
+    <%= render 'items_summary', :order => current_order %>
     <div class="checkout-button">
       <%= link_to "Checkout", checkout_path, :class => "btn yhwh-btn" %>
     </div>
