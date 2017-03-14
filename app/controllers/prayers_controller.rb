@@ -12,6 +12,7 @@ class PrayersController < ApplicationController
     @prayer = Prayer.new(prayer_params)
     @prayers = Prayer.order(:created_at).reverse
     if @prayer.save
+      flash[:notice] = "Your prayer request has been posted!"
       redirect_to prayers_path
     else
       render 'index'

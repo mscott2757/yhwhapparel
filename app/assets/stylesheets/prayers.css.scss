@@ -7,6 +7,7 @@
     h3 {
       text-align: center;
     }
+    min-height: 650px;
     float: left;
     left: 41%;
     right: 30%;
@@ -58,16 +59,14 @@
     left: 13%;
     float: left;
     width: 25%;
-    transform: translate(0%, -5%);
     h1 {
       text-align: center;
     }
     h4 {
       text-align: center;
     }
-
     #prayer-form {
-      #prayer_name, #prayer_prayer{
+      #prayer_prayer{
         box-shadow: none;
         box-sizing: border-box;
         border: 2px solid #505050;

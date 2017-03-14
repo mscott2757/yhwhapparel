@@ -4,7 +4,7 @@
     <h4> Welcome to YHWH's prayer wall! <br/>
       If you want someone to pray for you, please <br/>
       enter your prayer in the box below. <br/>
-      If you want to pray for someone, make sure you <br/>
+      If you want to pray for someone, make sure you
       let them know by clicking the heart button! </h4>
     <%= form_for @prayer, :html => { :id => "prayer-form" } do |f| %>
       <%= render 'prayers/error_messages', object: f.object %>
