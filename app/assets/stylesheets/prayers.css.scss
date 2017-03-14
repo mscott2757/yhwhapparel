@@ -8,10 +8,10 @@
       text-align: center;
     }
     float: left;
-    left: 19%;
+    left: 41%;
     right: 30%;
     position: relative;
-    width: 44vw;
+    width: 45.5%;
     .container.prayers {
       position: relative;
       display: flex;
@@ -21,14 +21,14 @@
       align-content: flex-start;
       padding-left: 0;
       margin-left: 0;
-      width: 44vw;
+      width: 101%;
     }
     .prayer {
       border-left: 4px solid #202020;
       word-wrap: break-word;
       padding-left: 10px;
       margin:10px 0 10px 0;
-      width: 44vw;
+      width: 104%;
       display: block;
       position: relative;
       #prayer-btn {
@@ -42,10 +42,10 @@
         background-size: 23%;
         background-position: left;
         background-repeat: no-repeat;
-        padding-top: .2vw;
-        padding-bottom: .2vw;
-        padding-left: 2.5vw;
-        padding-right: .5vw;
+        padding-top: .6%;
+        padding-bottom: .6%;
+        padding-left: 5%;
+        padding-right: 1.5%;
         width: auto;
         height: auto;
         display: inline-block;
@@ -54,10 +54,11 @@
   }
 
   #prayer-intro {
-    position: relative;
-    left: 15%;
+    position: fixed;
+    left: 13%;
     float: left;
-    width: 23vw;
+    width: 25%;
+    transform: translate(0%, -5%);
     h1 {
       text-align: center;
     }

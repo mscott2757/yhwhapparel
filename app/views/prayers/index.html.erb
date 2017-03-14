@@ -8,7 +8,7 @@
       let them know by clicking the heart button! </h4>
     <%= form_for @prayer, :html => { :id => "prayer-form" } do |f| %>
       <%= render 'prayers/error_messages', object: f.object %>
-      <%= f.text_area :prayer, class:  'form-control', size: "x20",
+      <%= f.text_area :prayer, class:  'form-control', size: "x12",
             placeholder: "Enter your prayer request here."%>
       <%= f.submit "Submit", class: "btn btn-primary" %>
       <%= button_tag "Clear", class: "btn btn-secondary", type: :reset %>
