@@ -1,4 +1,8 @@
 class HomeController < ApplicationController
+  def enter
+    render :layout => false
+  end
+
   def index
   end
 
