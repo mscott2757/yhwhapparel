@@ -1,11 +1,11 @@
 <div id="prayer-wall" class="container-fluid">
   <div id="prayer-intro">
     <img class="center-block" src="/prayer_wall.png" style="width:100%; height:110%;">
-    <h4> Welcome to YHWH's prayer wall! <br/>
+    <p> Welcome to YHWH's prayer wall! <br/>
       If you want someone to pray for you, please <br/>
       enter your prayer in the box below. <br/>
       If you want to pray for someone, make sure you
-      let them know by clicking the heart button! </h4>
+      let them know by clicking the heart button! </p>
     <%= form_for @prayer, :html => { :id => "prayer-form" } do |f| %>
       <%= render 'prayers/error_messages', object: f.object %>
       <%= f.text_area :prayer, class:  'form-control', size: "x12",
