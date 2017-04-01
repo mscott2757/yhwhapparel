@@ -1,23 +1,24 @@
 <div id="prayer-wall" class="container-fluid">
   <div id="prayer-intro">
-    <img class="center-block" src="/prayer_wall.png" style="width:100%; height:110%;">
-    <p> Welcome to YHWH's prayer wall! <br/>
-      If you want someone to pray for you, please <br/>
-      enter your prayer in the box below. <br/>
-      If you want to pray for someone, make sure you
+    <img class="center-block prayer-img" src="/prayer_wall.png">
+    <br>
+    <p> Welcome to YHWH's prayer wall!</p>
+    <p>  If you want someone to pray for you, please
+    enter your prayer in the box below.</p>
+    <p>  If you want to pray for someone, make sure you
       let them know by clicking the heart button! </p>
     <%= form_for @prayer, :html => { :id => "prayer-form" } do |f| %>
       <%= render 'prayers/error_messages', object: f.object %>
       <%= f.text_area :prayer, class:  'form-control', size: "x12",
             placeholder: "Enter your prayer request here."%>
-      <%= f.submit "Submit", class: "btn btn-primary" %>
-      <%= button_tag "Clear", class: "btn btn-secondary", type: :reset %>
+      <%= f.submit "Submit", class: "btn yhwh-btn" %>
     <% end %>
   </div>
   <div id="prayer-list">
-    <h3> Do not be anxious in anything, but in everything by prayer <br/>
-      and supplication with thanksgiving let your requests be made <br/>
-      known to God. <br/><br/> Phillpians 4:6 </h3>
+    <h3> Do not be anxious in anything, but in everything by prayer
+      and supplication with thanksgiving let your requests be made
+      known to God. </h3>
+      <h3> Phillpians 4:6 </h3>
     <div id="prayer-list-flexbox" class="container prayers" >
       <% @prayers.each do |prayer| %>
         <div id="prayer_<%= prayer.id -%>" class="prayer">

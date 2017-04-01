@@ -1,6 +1,10 @@
 // Place all the styles related to the Prayers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.prayer-img {
+  width: 100%;
+}
+
 #prayer-wall {
   position: relative;
   #prayer-list {
@@ -70,22 +74,14 @@
       #prayer_prayer{
         box-shadow: none;
         box-sizing: border-box;
-        border: 2px solid #505050;
-        border-radius: 4px;
+        border: 1px solid #333333;
+        border-radius: 0px;
       }
       .btn {
-        background-color: white;
-        color: black;
-        margin-top: 3px;
+        margin-top: 10px;
         box-sizing: border-box;
-        border: 2px solid #505050;
-        border-radius: 4px;
-        width: 49%;
+        width: 100%;
         display: inline-block;
-      }
-      .btn:hover {
-        background-color: grey;
-        color: white;
       }
     }
   }
