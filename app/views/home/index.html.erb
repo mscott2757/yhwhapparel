@@ -1,4 +1,7 @@
-<div class="container text-center" id="instagram"></div>
+<div class="container text-center">
+  <div class="row" id="instagram">
+  </div>
+</div>
 
 <script>
   var feed = new Instafeed({
@@ -8,6 +11,7 @@
     accessToken: '2189584280.1677ed0.cf0a6d5a22d24fa7b54114142f5f10a3',
     limit: 9,
     resolution: 'standard_resolution',
+    template: '<div class="col-md-4 insta-col"><a href="{{link}}"><img src="{{image}}" height="307" width="307"></a></div>',
     after: function() {
       var el = document.getElementById('instagram');
       if (el.classList)
