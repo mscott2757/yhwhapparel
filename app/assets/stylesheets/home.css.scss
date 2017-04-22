@@ -19,3 +19,32 @@
   -moz-transition: opacity .15s ease-in-out;
   -webkit-transition: opacity .15s ease-in-out;
 }
+
+#staff-bio {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+#staff-img {
+  border-radius: 50%;
+  height: 80%;
+  margin-bottom: 12px;
+}
+
+#staff-description {
+  display: block;
+}
+
+#staff-title {
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+#staff-name {
+  font-size: 12px;
+}
+
+#staff-bio-row {
+  margin-top: 28px;
+}
