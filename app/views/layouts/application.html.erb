@@ -14,7 +14,17 @@
     	<%= content_tag :div, msg, class: "alert alert-info" %>
   	<% end %>
 
-		<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid navbar navbar-default">
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#yhwh-collapsible-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+		<div class="navbar navbar-default navbar-fixed-top collapse navbar-collapse" id="yhwh-collapsible-navbar">
 			<ul class="nav navbar-nav">
         <li><%= link_to home_path do %>
           <img class="responsive" src="http://dpegb9ebondhq.cloudfront.net/banner_images/693291/Screen_Shot_2016-03-05_at_11.02.37_PM_original.png" alt="" height="50">
