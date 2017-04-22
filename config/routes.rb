@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#enter'
   get '/home', to: 'home#index'
-  get '/community_outreach', to: 'home#community_outreach'
+  get '/missions', to: 'home#missions'
   get '/faq', to: 'home#faq'
   get '/about_us', to: 'home#about_us'
   get '/contact', to: 'home#contact'

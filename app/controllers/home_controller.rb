@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   def index
   end
 
-  def community_outreach
+  def missions
   end
 
   def faq
