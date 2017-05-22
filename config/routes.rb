@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   get '/contact', to: 'home#contact'
   get '/stories', to: 'home#stories'
   get '/designs', to: 'home#designs'
-  patch '/prayers/update' => 'prayers#update'
-  resources :prayers
+  #patch '/prayers/update' => 'prayers#update'
+  #resources :prayers
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
