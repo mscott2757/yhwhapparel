@@ -17,18 +17,6 @@ Rails.application.routes.draw do
   patch '/prayers/update' => 'prayers#update'
   resources :prayers
 
-  get "product/:permalink", to: "products#show", as: "product"
-  post "product/:permalink", to: "products#buy", as: "buy"
-  get '/products', to: 'products#index'
-  post "product/:permalink", to: "products#buy"
-
-  get "basket", to: "orders#show"
-  delete "basket", to: "orders#destroy"
-
-  match "checkout", to: "orders#checkout", as: "checkout", via: [:get, :patch]
-  match "checkout/pay", to: "orders#payment", as: "checkout_payment", via: [:get, :post]
-  match "checkout/confirm", to: "orders#confirmation", as: "checkout_confirmation", via: [:get, :post]
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
