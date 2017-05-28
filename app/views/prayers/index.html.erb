@@ -7,6 +7,8 @@
     enter your prayer in the box below.</p>
     <p>  If you want to pray for someone, make sure you
       let them know by clicking the heart button! </p>
+    <p> <small> Note: If the heart button isn't working, refresh the page and
+      try again. </small> </p>
     <%= form_for @prayer, :html => { :id => "prayer-form" } do |f| %>
       <%= render 'prayers/error_messages', object: f.object %>
       <%= f.text_area :prayer, class:  'form-control', size: "x12",

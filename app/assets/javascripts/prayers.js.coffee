@@ -16,9 +16,8 @@
     })
 
   ready = ->
-    $(document).ready =>
-      $("button").click ->
-        reload $(this).data("id")
+    $("button").click ->
+      reload $(this).data("id")
 
 
   $(document).ready(ready)
