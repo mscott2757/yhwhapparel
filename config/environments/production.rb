@@ -89,6 +89,6 @@ Rails.application.configure do
     :domain => "gmail.com",
     :authentication => :login,
     :user_name => "yhwhapparel",
-    :password => "fixedonjesus7"
+    :password => ""
   }
 end
