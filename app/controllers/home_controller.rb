@@ -24,4 +24,7 @@ class HomeController < ApplicationController
   def designs
   end
 
+  def join_us
+  end
+
 end
