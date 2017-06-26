@@ -31,11 +31,18 @@
       <ul class="nav navbar-nav">
         <li class="navbar-item"><%= link_to "Designs", designs_path %></li>
         <li class="navbar-item"><%= link_to "Shop", "http://yhwhapparel.storenvy.com/products" %></li>
-        
+
         <li class="navbar-item"><%= link_to "Missions", missions_path %></li>
         <li class="navbar-item"><%= link_to "FAQ", faq_path %></li>
-        <li class="navbar-item"><%= link_to "About Us", about_us_path %></li>
-        <li class="navbar-item"><%= link_to "Contact", contact_path %></li>
+        <li class="navbar-item dropdown">
+          <span class="dropdown-toggle" id="dropdown_aboutus" data-toggle="dropdown">About Us
+          <span class="caret"></span></span>
+          <ul class="dropdown-menu">
+            <li class="navbar-item"><%= link_to "About Us", about_us_path %></li>
+            <li class="navbar-item"><%= link_to "Join Us", join_us_path %></li>
+            <li class="navbar-item"><%= link_to "Contact", contact_path %></li>
+          </li>
+        </span>
       </ul>
     </div>
   </div>

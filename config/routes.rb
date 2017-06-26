@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'home#contact'
   get '/stories', to: 'home#stories'
   get '/designs', to: 'home#designs'
+  get '/join_us', to: 'home#join_us'
   #patch '/prayers/update' => 'prayers#update'
   #resources :prayers
 
