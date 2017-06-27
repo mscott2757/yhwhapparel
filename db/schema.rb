@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(version: 20170528204614) do
     t.string  "value",       limit: 255
   end
 
+  create_table "nifty_key_value_store", force: :cascade do |t|
+    t.integer "parent_id"
+    t.string  "parent_type", limit: 255
+    t.string  "group",       limit: 255
+    t.string  "name",        limit: 255
+    t.string  "value",       limit: 255
+  end
+
   create_table "orders", force: :cascade do |t|
     t.string   "fullname",    limit: 255
     t.string   "address",     limit: 255
