@@ -5,6 +5,7 @@ gem 'figaro'
 gem 'instagram'
 gem 'instafeed'
 gem 'rspec-core'
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
