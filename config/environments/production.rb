@@ -92,4 +92,6 @@ Rails.application.configure do
       authentication: :login,
       enable_starttls_auto: true
   }
+
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 end
