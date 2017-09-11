@@ -40,6 +40,23 @@
             <li class="navbar-item"><%= link_to "FAQ", faq_path %></li>
             <li class="navbar-item"><%= link_to "Contact", contact_path %></li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="navbar-item">
+              <%= link_to "https://www.facebook.com/yhwhapparel/?fref=ts", id: "navbar-icon" do %>
+                <%= image_tag "facebook-with-circle.svg" %>
+              <% end %>
+            </li>
+            <li class="navbar-item">
+              <%= link_to "https://www.instagram.com/yhwhapparel/", id: "navbar-icon" do %>
+                <%= image_tag "instagram-with-circle.svg" %>
+              <% end %>
+            </li>
+            <li class="navbar-item">
+              <%= link_to "https://www.youtube.com/channel/UCHTRcGAhI1tFbfoh3rxpZtA", id: "navbar-icon" do %>
+                <%= image_tag "youtube-with-circle.svg" %>
+              <% end %>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -66,7 +83,6 @@
       </div>
 
     </footer>
-
 
   </body>
 </html>
