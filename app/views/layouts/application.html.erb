@@ -39,6 +39,11 @@
             <li class="navbar-item"><%= link_to "About Us", about_us_path %></li>
             <li class="navbar-item"><%= link_to "FAQ", faq_path %></li>
             <li class="navbar-item"><%= link_to "Contact", contact_path %></li>
+            <% if admin_signed_in? %>
+              <li class="navbar-item"><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>
+            <% else %>
+              <li class="navbar-item"><%= link_to "Sign In", new_admin_session_path %></li>
+            <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="navbar-item">

@@ -6,6 +6,7 @@ gem 'instagram'
 gem 'instafeed'
 gem 'rspec-core'
 gem 'devise'
+gem 'devise_invitable', '~> 1.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'

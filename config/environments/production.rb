@@ -31,6 +31,7 @@ Rails.application.configure do
 
   # Generate digests for assets URLs.
   config.assets.digest = true
+  config.assets.initialize_on_precompile = false
 
   # `config.assets.precompile` has moved to config/initializers/assets.rb
 
@@ -80,16 +81,20 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.perform_deliveries = true
+  Rails.application.routes.default_url_options[:host] = 'yhwhapparel.com'
+  config.action_mailer.default_url_options = { host: 'yhwhapparel.com' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'www.yhwhapparel.com' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
   config.action_mailer.smtp_settings = {
       user_name:     ENV['SENDMAIL_USERNAME'],
       password:      ENV['SENDMAIL_PASSWORD'],
       domain:        'gmail.com',
       address:       'smtp.gmail.com',
       port:          '587',
-      authentication: :login,
+      authentication: :plain,
       enable_starttls_auto: true
   }
 
