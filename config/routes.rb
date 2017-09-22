@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admins
+  resources :admins
   # devise_for :users
   get 'prayers/new'
   get 'home/index'

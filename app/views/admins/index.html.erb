@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Admins</h2>
+  <div>
+    <% @admins.each do |admin| %>
+      <div class="row">
+        <div class="col-md-6">
+          <p><%= admin.email %></p>
+        </div>
+
+        <div class="col-md-6">
+          <% if admin.invitation_token.present? and admin.invitation_accepted_at.nil? %>
+            <p>invitation sent</p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Invite an admin", new_admin_invitation_path %>
+</div>
