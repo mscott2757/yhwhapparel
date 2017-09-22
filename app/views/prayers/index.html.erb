@@ -23,16 +23,13 @@
       <h3> Philippians 4:6 </h3>
     <div id="prayer-list-flexbox" class="container prayers" >
       <% @prayers.each do |prayer| %>
-        <div id="prayer_<%= prayer.id -%>" class="prayer">
+        <div id="prayer-<%= prayer.id %>" class="prayer">
           <p style="color: grey"> Requested on <%= prayer.created_at.strftime("%b %d, %Y") %> </p>
           <p><%= prayer.prayer %></p>
           <span style="color: grey">
             This prayer has been prayed for
             <%= pluralize(prayer.affirms, "time") %> </span>
-          <button type="button"
-                  id="prayer-btn"
-                  class="pull-right"
-                  data-id="<%= prayer.id %>"> I prayed for you! </button>
+          <%= link_to "I prayed for you!", affirm_prayer_path(prayer), id: "prayer-btn", class: "pull-right", remote: true %>
         </div>
       <% end %>
     </div>

@@ -1,0 +1,19 @@
+<div class="container pending-container">
+  <h2>Pending Prayers</h2>
+  <% @prayers.each do |prayer| %>
+    <div class="row pending__row">
+
+      <div class="col-md-6">
+        <div id="prayer-<%= prayer.id %>" class="pending__prayer">
+          <p style="color: grey"> Requested on <%= prayer.created_at.strftime("%b %d, %Y") %> </p>
+          <p class="pending__content"><%= prayer.prayer %></p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <%= link_to "approve", approve_prayer_path(prayer), class: "btn yhwh-btn" %>
+        <%= link_to "delete", prayer_path(prayer), method: :delete, class: "btn yhwh-btn pending__delete-btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>

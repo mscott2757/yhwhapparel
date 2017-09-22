@@ -1,12 +1,19 @@
 class Prayer < ActiveRecord::Base
   validates :prayer, presence: true
-  after_initialize :set_defaults, unless: :persisted?
-
-  def set_defaults
-    self.affirms ||= 0
-  end
 
   def affirm
-    self.affirms += 1
+    update(affirms: affirms + 1)
+  end
+
+  def approve
+    update(approved: true)
+  end
+
+  def self.approved
+    self.where(approved: true).order(:created_at).reverse
+  end
+
+  def self.pending
+    self.where(approved: false).order(:created_at).reverse
   end
 end

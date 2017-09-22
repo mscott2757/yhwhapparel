@@ -18,7 +18,16 @@ Rails.application.routes.draw do
   get '/designs', to: 'home#designs'
   # get '/join_us', to: 'home#join_us'
   #patch '/prayers/update' => 'prayers#update'
-  #resources :prayers
+  resources :prayers do
+    member do
+      get 'affirm'
+      get 'approve'
+    end
+
+    collection do
+      get 'pending'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

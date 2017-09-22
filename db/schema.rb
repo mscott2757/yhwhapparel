@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170919225254) do
+ActiveRecord::Schema.define(version: 20170922015723) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -46,7 +46,8 @@ ActiveRecord::Schema.define(version: 20170919225254) do
     t.string   "prayer",     limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "affirms"
+    t.integer  "affirms",                default: 0
+    t.boolean  "approved",               default: false
   end
 
 end

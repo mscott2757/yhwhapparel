@@ -1,6 +1,8 @@
 class PrayersController < ApplicationController
+  before_action :authenticate_admin!, only: [ :pending ]
+
   def index
-    @prayers = Prayer.order(:created_at).reverse
+    @prayers = Prayer.approved
     @prayer = Prayer.new
   end
 
@@ -9,30 +11,43 @@ class PrayersController < ApplicationController
   end
 
   def create
-    @prayer = Prayer.new(prayer_params)
-    @prayers = Prayer.order(:created_at).reverse
+    @prayer = Prayer.create(prayer_params)
     if @prayer.save
-      flash[:notice] = "Your prayer request has been posted!"
-      redirect_to prayers_path
-    else
-      render 'index'
+      flash[:notice] = "Your prayer request has been received!"
     end
+
+    redirect_back(fallback_location: root_path)
   end
 
-  def update
+  def pending
+    @prayers = Prayer.pending
+  end
+
+  def approve
     @prayer = Prayer.find(params[:id])
-    @prayer.affirms ||= 0
-    @prayer.update(affirms: @prayer.affirms + 1)
-    render json: @prayer
+    @prayer.approve
+    flash[:notice] = "Prayer request successfully approved!"
+    redirect_back(fallback_location: root_path)
   end
 
-  private
+  def destroy
+    @prayer = Prayer.find(params[:id])
+    @prayer.destroy
+    flash[:notice] = "Prayer request successfully deleted!"
+    redirect_back(fallback_location: root_path)
+  end
 
-    def prayer_params
-      params.require(:prayer).permit(:name, :prayer)
-    end
+  def affirm
+    @prayer = Prayer.find(params[:id])
+    @prayer.affirm
 
-    def affirm prayer
-      prayer.affirm += 1
+    respond_to do |format|
+      format.js
+      format.html { redirect_back(fallback_location: root_path) }
     end
+  end
+
+  def prayer_params
+    params.require(:prayer).permit(:name, :prayer)
+  end
 end

@@ -34,12 +34,14 @@
           <ul class="nav navbar-nav">
             <li class="navbar-item"><%= link_to "Designs", designs_path %></li>
             <li class="navbar-item"><%= link_to "Shop", "http://yhwhapparel.storenvy.com/products" %></li>
+            <li class="navbar-item"><%= link_to "Prayers", prayers_path %></li>
 
             <li class="navbar-item"><%= link_to "Missions", missions_path %></li>
             <li class="navbar-item"><%= link_to "About Us", about_us_path %></li>
             <li class="navbar-item"><%= link_to "FAQ", faq_path %></li>
             <li class="navbar-item"><%= link_to "Contact", contact_path %></li>
             <% if admin_signed_in? %>
+              <li class="navbar-item"><%= link_to "Pending Prayers", pending_prayers_path %></li>
               <li class="navbar-item"><%= link_to "Sign Out", destroy_admin_session_path, method: :delete %></li>
             <% else %>
               <li class="navbar-item"><%= link_to "Sign In", new_admin_session_path %></li>
