@@ -1,4 +1,4 @@
-class DeviseInvitableAddToAdmins < ActiveRecord::Migration
+class DeviseInvitableAddToAdmins < ActiveRecord::Migration[5.0]
   def up
     change_table :admins do |t|
       t.string     :invitation_token
