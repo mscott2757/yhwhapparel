@@ -1,0 +1,39 @@
+#staff-bio {
+  margin-top: 28px;
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+#staff-img {
+  border-radius: 50%;
+  height: 80%;
+  margin-bottom: 12px;
+}
+
+#staff-description {
+  display: block;
+}
+
+#staff-bio-col {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#staff-title {
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+#staff-name {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 800px) {
+    // this css will only be used when the screen size is min 800px
+  #staff-bio-body {
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 1140px;
+  }
+}

@@ -2,65 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#instagram {
-  .insta-col {
-    padding: 10px;
+#home-container {
+  .home-banner {
+    margin-bottom: 34px;
 
-    a {
-      img {
-        opacity: 1.0;
-        transition: opacity 0.15s ease-in-out;
-        -moz-transition: opacity 0.15s ease-in-out;
-        -webkit-transition: opacity 0.15s ease-in-out;
+    img {
+      width: 100%;
+    }
 
-        &:hover {
-          opacity: 0.6;
-          transition: opacity .15s ease-in-out;
-          -moz-transition: opacity .15s ease-in-out;
-          -webkit-transition: opacity .15s ease-in-out;
+  }
+
+  #instagram {
+    padding: 4px;
+
+    .insta-col {
+      padding: 10px;
+
+      a {
+        img {
+          opacity: 1.0;
+          transition: opacity 0.15s ease-in-out;
+          -moz-transition: opacity 0.15s ease-in-out;
+          -webkit-transition: opacity 0.15s ease-in-out;
+
+          &:hover {
+            opacity: 0.6;
+            transition: opacity .15s ease-in-out;
+            -moz-transition: opacity .15s ease-in-out;
+            -webkit-transition: opacity .15s ease-in-out;
+          }
         }
       }
     }
   }
 }
 
-#staff-bio {
-  margin-top: 28px;
-  position: relative;
-  height: 300px;
-  width: 300px;
-}
-
-#staff-img {
-  border-radius: 50%;
-  height: 80%;
-  margin-bottom: 12px;
-}
-
-#staff-description {
-  display: block;
-}
-
-#staff-bio-col {
-  padding-right: 0px;
-  padding-left: 0px;
-}
-
-#staff-title {
-  margin-top: 10px;
-  margin-bottom: 4px;
-}
-
-#staff-name {
-  font-size: 12px;
-}
 
 
-@media screen and (min-width: 800px) {
-    // this css will only be used when the screen size is min 800px
-  #staff-bio-body {
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 1140px;
-  }
-}

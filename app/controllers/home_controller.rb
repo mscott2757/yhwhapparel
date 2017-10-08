@@ -4,6 +4,10 @@ class HomeController < ApplicationController
   end
 
   def index
+    fname = "test_file.txt"
+    file = File.open(fname, "w")
+    file.puts("hello, world")
+    file.close
   end
 
   def missions
