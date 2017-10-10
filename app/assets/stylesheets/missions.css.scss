@@ -1,24 +1,39 @@
-.missionaries {
+#missions {
   h4 {
     margin: 0;
   }
+
+  .missions__intro {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .missions__row {
+    padding: 20px 0;
+  }
+
+  img {
+    padding: 5px;
+  }
+
+  .johannah {
+    float: left;
+    width: 50%;
+  }
+  .isabella {
+    float: left;
+    width: 50%;
+  }
+
+  .missions__info {
+    color: #a8a8a8;
+    margin: 5px 0 15px 0;
+
+    span:last-child {
+      float: right;
+    }
+
+  }
 }
 
-#missionary-intro {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.missionary {
-  padding-bottom: 15px;
-}
 
-#johannah {
-  float: left;
-  height: auto;
-  width: 50.5%;
-}
-#isabella {
-  float: left;
-  height: auto;
-  width: 48.7%;
-}
