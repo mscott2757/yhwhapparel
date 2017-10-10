@@ -21,7 +21,16 @@
   }
 
   .row {
-    margin: 30px 0;
+    margin: 40px 0;
+  }
+
+  .col-md-4 {
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    max-width: 250px;
   }
 }
 
