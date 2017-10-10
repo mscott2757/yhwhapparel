@@ -1,11 +1,15 @@
 #missions {
-  h4 {
+  h3 {
     margin: 0;
   }
 
   .missions__intro {
     margin-top: 10px;
     margin-bottom: 20px;
+  }
+
+  .missions__header {
+    margin-bottom: 40px;
   }
 
   .missions__row {
@@ -23,6 +27,10 @@
   .isabella {
     float: left;
     width: 50%;
+  }
+
+  h2, h3, h4 {
+    font-family: "Century Schoolbook";
   }
 
   .missions__info {

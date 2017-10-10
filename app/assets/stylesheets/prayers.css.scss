@@ -10,6 +10,7 @@
   #prayer-list {
     h3 {
       text-align: center;
+      font-family: "Century Schoolbook";
     }
     float: left;
     left: 16%;
@@ -85,23 +86,29 @@
 
 }
 
-.pending__delete-btn {
-  margin-left: 10px;
-}
-
-.pending__prayer {
-  border-bottom: 1px solid #838383;
-  padding: 10px 0;
-  margin-bottom: 25px;
-}
-
-.pending__row:last-child {
-  .pending__prayer {
-    border-bottom: none;
+#pending-prayers {
+  h2 {
+    font-family: "Century Schoolbook";
   }
-}
 
-.pending__content {
-  word-wrap: break-word;
+  .pending__delete-btn {
+    margin-left: 10px;
+  }
+
+  .pending__prayer {
+    border-bottom: 1px solid #838383;
+    padding: 10px 0;
+    margin-bottom: 25px;
+  }
+
+  .pending__row:last-child {
+    .pending__prayer {
+      border-bottom: none;
+    }
+  }
+
+  .pending__content {
+    word-wrap: break-word;
+  }
 }
 
